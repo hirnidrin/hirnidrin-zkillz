@@ -1,0 +1,13 @@
+# The devcontainer image. See .devcontainer/README.md.
+# Debian pinned to its point release; the project adds what it needs below.
+FROM docker.io/library/debian:@DEBIAN@-slim
+
+# git: Claude Code and VS Code's Source Control work through it.
+# ca-certificates: TLS for git and anything else fetched over https.
+RUN apt-get update \
+	&& DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+		ca-certificates git \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN useradd --uid 1000 --create-home --shell /bin/bash dev
+USER dev

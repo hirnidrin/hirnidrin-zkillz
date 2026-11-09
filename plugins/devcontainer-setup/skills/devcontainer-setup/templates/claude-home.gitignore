@@ -1,0 +1,14 @@
+# Claude Code's config dir inside the devcontainer (CLAUDE_CONFIG_DIR).
+# Local-only by default: credentials, transcripts, file history, caches,
+# personal skills, plugin checkouts and installed_plugins.json.
+# Committed: this file, settings.json, and the link to this project's memory
+# (memory/ at the repo root).
+*
+!/.gitignore
+!/settings.json
+!/projects/
+/projects/*
+!/projects/@KEY@/
+/projects/@KEY@/*
+# The memory folder is a link to the repo's memory/ (long-term memory).
+!/projects/@KEY@/memory

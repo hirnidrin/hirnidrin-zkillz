@@ -1,0 +1,31 @@
+{
+  "name": "@REPO@",
+  "build": { "dockerfile": "Containerfile", "context": "." },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/@REPO@,type=bind",
+  "workspaceFolder": "/workspaces/@REPO@",
+  "mounts": [],
+  "initializeCommand": "bash .devcontainer/initialize.sh",
+  "containerUser": "dev",
+  "remoteUser": "dev",
+  "containerEnv": {
+    "CLAUDE_CONFIG_DIR": "/workspaces/@REPO@/.devcontainer/claude-home",
+    "GIT_AUTHOR_NAME": "@GIT_NAME@",
+    "GIT_AUTHOR_EMAIL": "@GIT_EMAIL@",
+    "GIT_COMMITTER_NAME": "@GIT_NAME@",
+    "GIT_COMMITTER_EMAIL": "@GIT_EMAIL@"
+  },
+  "remoteEnv": {
+    "SSH_AUTH_SOCK": ""
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["anthropic.claude-code"],
+      "settings": {
+        "files.eol": "\n",
+        "github.gitAuthentication": false,
+        "git.terminalAuthentication": false,
+        "git.useIntegratedAskPass": false
+      }
+    }
+  }
+}

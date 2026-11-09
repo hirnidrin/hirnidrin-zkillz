@@ -1,0 +1,8 @@
+{
+  "name": "devcontainer-setup",
+  "version": "0.1.0",
+  "description": "Set up a VS Code devcontainer for Claude Code: minimal Debian, no credentials inside, long-term memory committed in the repo",
+  "author": {
+    "name": "hirnidrin"
+  }
+}
